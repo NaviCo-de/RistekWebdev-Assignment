@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRYOUT YUK</title>
+</head>
+<body>
+    <h1>Add Data</h1>
+    <form method="post">
+        {%csrf_token%}
+        <label for="judul_tryout">Judul Tryout: </label>
+        <input type="text" name="judul_tryout" id="judul_tryout" required><br>
+
+        <label for="kategori">Kategori: </label>
+        <input type="text" name="kategori" id="kategori"><br>
+
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

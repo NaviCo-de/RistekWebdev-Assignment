@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRYOUT YUK!</title>
+    <link rel="stylesheet" href="../static/app_utama/list.css">
+</head>
+<body>
+    <h1>LIST TRYOUT</h1>
+
+    <form method="get">
+        {%csrf_token%}
+        <input type="text" name="search" id="search" placeholder="Judul Tryout...">
+        <button type="submit">Search</button>
+
+        <a href="{% url 'tryout' %}">
+            <button>Clear</button>
+        </a>
+    </form>
+
+    <a href="{% url 'add_data' %}" id="add">Add</a>
+
+    
+    {% for item in data%}
+        <a href="">
+            <div class="tryout-container">
+                <h2>{{ item.judul_tryout }}</h2>
+                <p>Kategori: {{ item.kategori }}</p>
+                <small>Tanggal dibuat: {{ item.tanggal_dibuat }}</small>
+                <br>
+
+                <a href="{% url 'edit_data' item.id %}">
+                    <div class="div-edit-delete" id="edit">
+                        <p class="p-edit-delete">Edit</p>
+                    </div>
+                </a>
+
+                <a href="{% url 'delete_data' item.id %}">
+                    <div class="div-edit-delete" id="delete">
+                        <p class="p-edit-delete">Delete</p>
+                    </div>
+                </a>
+            </div>
+        </a>
+        
+    {% endfor %}
+    
+</body>
+</html>

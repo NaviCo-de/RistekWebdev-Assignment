@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRYOUT YUK</title>
+</head>
+<body>
+    <h1>Edit Data</h1>
+    <form method="post">
+        {%csrf_token%}
+        <label for="judul_tryout">Judul Tryout: </label>
+        <input type="text" id="judul_tryout" name="judul_tryout" 
+        value="{{ entry.judul_tryout }}" required><br>
+
+        <label for="kategori">Kategori: </label>
+        <input type="text" id="kategori" name="kategori" 
+        value="{{ entry.kategori }}" required><br>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
