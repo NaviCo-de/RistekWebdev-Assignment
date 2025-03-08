@@ -22,30 +22,39 @@
 
     <a href="{% url 'add_data' %}" id="add">Add</a>
 
+    <div id="page-container">
+        {% for item in data%}
+            <a href="{% url 'detail_data' item.judul_tryout item.id %}">
+                <div id="main-container">
+                    <div class="tryout-container">
+                        <div id="div-judul-tryout">
+                            <h2 id="h2-judul-tryout">{{ item.judul_tryout }}</h2>
+                        </div>
+                        
+                        <div id="div-deskripsi-tryout">
+                            <p>Kategori: {{ item.kategori }}</p>
+                            <small>Tanggal dibuat: {{ item.tanggal_dibuat }}</small>
+                            <br>
+
+                            <a href="{% url 'edit_data' item.id %}">
+                                <div class="div-edit-delete" id="edit">
+                                    <p class="p-edit-delete">Edit</p>
+                                </div>
+                            </a>
+
+                            <a href="{% url 'delete_data' item.id %}">
+                                <div class="div-edit-delete" id="delete">
+                                    <p class="p-edit-delete">Delete</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </a>
+        {% endfor %}
+    </div>
     
-    {% for item in data%}
-        <a href="">
-            <div class="tryout-container">
-                <h2>{{ item.judul_tryout }}</h2>
-                <p>Kategori: {{ item.kategori }}</p>
-                <small>Tanggal dibuat: {{ item.tanggal_dibuat }}</small>
-                <br>
-
-                <a href="{% url 'edit_data' item.id %}">
-                    <div class="div-edit-delete" id="edit">
-                        <p class="p-edit-delete">Edit</p>
-                    </div>
-                </a>
-
-                <a href="{% url 'delete_data' item.id %}">
-                    <div class="div-edit-delete" id="delete">
-                        <p class="p-edit-delete">Delete</p>
-                    </div>
-                </a>
-            </div>
-        </a>
-        
-    {% endfor %}
     
 </body>
 </html>

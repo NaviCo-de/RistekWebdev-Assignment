@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 }
 a {
     color: black;
@@ -19,12 +19,12 @@ a {
     width: 65px;
 }
 
+
+
 .tryout-container {
-    background-color: lightblue;
+    background-color: blue;
     border-radius: 10px 10px;
-    display: inline-block;
-    margin: 20px 10px 0 0;
-    padding-left: 10px;
+    box-shadow: 10px black;
     width: 300px;
 }
 
@@ -34,8 +34,38 @@ a {
 
 #add {
     display: block;
-    background-color: cyan;
+    background-color: beige;
 }
+
+#div-deskripsi-tryout {
+    background-color: yellow;
+    border-radius: 0 0 10px 10px;
+    padding: 0 0 0 10px;
+}
+
+#div-judul-tryout {
+    background-color: aqua;
+    border-radius: 10px 10px 0 0;
+}
+
 #edit {
     margin-right: 10px;
+}
+
+#h2-judul-tryout {
+    margin: 0 0 0 10px;
+}
+
+#main-container {
+    display: inline-flex;
+    height: auto;
+    margin: 20px 20px 0 0;
+}
+
+#page-container {
+    background-color: black;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
 }

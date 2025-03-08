@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRYOUT YUK!</title>
+</head>
+<body>
+    <h1>{{ item.judul_tryout }}</h1>
+    <a href="{% url 'add_question' item.judul_tryout item.id %}" id="add">Add</a>
+    
+    {% for komponen in item.list_pertanyaan %}
+        <div>
+            <p>{{komponen.nomor_pertanyaan}}. {{ komponen.pertanyaan }}</p>
+            <a href="{% url 'edit_question' item.judul_tryout item.id komponen.nomor_pertanyaan %}">Edit</a>
+            <a href="{% url 'delete_question' item.judul_tryout item.id komponen.nomor_pertanyaan %}">Delete</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
