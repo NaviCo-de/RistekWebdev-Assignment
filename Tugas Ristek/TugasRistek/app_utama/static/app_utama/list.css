@@ -2,12 +2,22 @@
     text-decoration: none;
 }
 
+a {
+    color: black;
+}
+
 body {
+    height: 100%;
     margin: 0;
     padding: 0 20px 20px 20px;
 }
-a {
-    color: black;
+
+footer {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .div-edit-delete {
@@ -19,17 +29,35 @@ a {
     width: 65px;
 }
 
+.footer-icon {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
 
+.footer-icon a {
+    transition: transform 0.1s ease;
+}
+
+.footer-icon a:hover {
+    transform: scale(1.2);
+}
 
 .tryout-container {
-    background-color: blue;
     border-radius: 10px 10px;
-    box-shadow: 10px black;
+    background-color: lightgray;
     width: 300px;
 }
 
 .p-edit-delete {
     text-align: center;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #add {
@@ -38,13 +66,11 @@ a {
 }
 
 #div-deskripsi-tryout {
-    background-color: yellow;
     border-radius: 0 0 10px 10px;
     padding: 0 0 0 10px;
 }
 
 #div-judul-tryout {
-    background-color: aqua;
     border-radius: 10px 10px 0 0;
 }
 
@@ -63,7 +89,6 @@ a {
 }
 
 #page-container {
-    background-color: black;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: space-between;

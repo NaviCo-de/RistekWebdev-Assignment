@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRYOUT YUK</title>
+</head>
+<body>
+    <h1>Edit Pertanyaan</h1>
+    <form method="post">
+        {%csrf_token%}
+        <label for="pertanyaan">Pertanyaan: </label>
+        <input type="text" id="pertanyaan_baru" name="pertanyaan_baru" 
+        value="{{ entry.pertanyaan }}" required><br>
+
+        <label for="jawaban_benar_baru">Jawaban Benar: </label>
+        <input type="text" id="jawaban_benar_baru" name="jawaban_benar_baru" 
+        value="{{ entry.jawaban_benar }}" required><br>
+
+        <label for="jawaban_benar_baru">Jawaban Salah: </label>
+        <input type="text" id="jawaban_salah_baru" name="jawaban_salah_baru" 
+        value="{{ entry.jawaban_salah }}" required><br>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

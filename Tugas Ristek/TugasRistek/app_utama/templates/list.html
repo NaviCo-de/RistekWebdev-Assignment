@@ -8,53 +8,78 @@
     <link rel="stylesheet" href="../static/app_utama/list.css">
 </head>
 <body>
-    <h1>LIST TRYOUT</h1>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <h1>LIST TRYOUT</h1>
 
-    <form method="get">
-        {%csrf_token%}
-        <input type="text" name="search" id="search" placeholder="Judul Tryout...">
-        <button type="submit">Search</button>
+        <form method="get">
+            {%csrf_token%}
+            <input type="text" name="search" id="search" placeholder="Judul Tryout...">
+            <button type="submit">Search</button>
 
-        <a href="{% url 'tryout' %}">
-            <button>Clear</button>
-        </a>
-    </form>
+            <a href="{% url 'tryout' %}">
+                <button>Clear</button>
+            </a>
+        </form>
 
-    <a href="{% url 'add_data' %}" id="add">Add</a>
+        <a href="{% url 'add_data' %}" id="add">Add</a>
 
-    <div id="page-container">
-        {% for item in data%}
-            <a href="{% url 'detail_data' item.judul_tryout item.id %}">
-                <div id="main-container">
-                    <div class="tryout-container">
-                        <div id="div-judul-tryout">
-                            <h2 id="h2-judul-tryout">{{ item.judul_tryout }}</h2>
-                        </div>
-                        
-                        <div id="div-deskripsi-tryout">
-                            <p>Kategori: {{ item.kategori }}</p>
-                            <small>Tanggal dibuat: {{ item.tanggal_dibuat }}</small>
-                            <br>
+        <div id="page-container">
+            {% for item in data%}
+                    <div id="main-container">
+                        <div class="tryout-container">
+                            <div id="div-judul-tryout">
+                                <a href="{% url 'detail_data' item.judul_tryout item.id %}">
+                                    <h2 id="h2-judul-tryout">{{ item.judul_tryout }}</h2>
+                                </a>
+                            </div>
+                            
+                            <div id="div-deskripsi-tryout">
+                                <p>Kategori: {{ item.kategori }}</p>
+                                <small>Tanggal dibuat: {{ item.tanggal_dibuat }}</small>
+                                <br>
 
-                            <a href="{% url 'edit_data' item.id %}">
-                                <div class="div-edit-delete" id="edit">
-                                    <p class="p-edit-delete">Edit</p>
-                                </div>
-                            </a>
+                                <a href="{% url 'edit_data' item.id %}">
+                                    <div class="div-edit-delete" id="edit">
+                                        <p class="p-edit-delete">Edit</p>
+                                    </div>
+                                </a>
 
-                            <a href="{% url 'delete_data' item.id %}">
-                                <div class="div-edit-delete" id="delete">
-                                    <p class="p-edit-delete">Delete</p>
-                                </div>
-                            </a>
+                                <a href="{% url 'delete_data' item.id %}">
+                                    <div class="div-edit-delete" id="delete">
+                                        <p class="p-edit-delete">Delete</p>
+                                    </div>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-            </a>
-        {% endfor %}
+            {% endfor %}
+        </div>
+
+        <footer>
+            <p class="footer-copyright">&copy; 2025 Darrell's Website. All rights reserved.</p>
+
+            <div class="footer-icon">
+                <a href="https://line.me/ti/p/dar-rell">
+                    <img src="../../static/icon/Line.svg" alt="">
+                </a>
+
+                <a href="https://www.instagram.com/aridrl_/">
+                    <img src="../../static/icon/Instagram.svg" alt="">
+                </a>
+
+                <a href="https://www.linkedin.com/in/ari-darrell-muljono-313b0b2a1/">
+                    <img src="../../static/icon/Linkedin.svg" alt="">
+                </a>
+            </div>
+        </footer>
     </div>
-    
-    
 </body>
 </html>

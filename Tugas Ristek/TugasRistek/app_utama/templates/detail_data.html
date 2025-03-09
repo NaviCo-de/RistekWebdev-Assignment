@@ -16,5 +16,7 @@
             <a href="{% url 'delete_question' item.judul_tryout item.id komponen.nomor_pertanyaan %}">Delete</a>
         </div>
     {% endfor %}
+    <a href="{% url 'pengerjaan_tryout' %}">KERJAKAN</a>
+    <a href="{% url 'tryout' %}">Back</a>
 </body>
 </html>

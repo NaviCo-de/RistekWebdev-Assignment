@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRYOUT YUK!</title>
+</head>
+<body>
+    <h1>KERJAKAN DENGAN JUJUR YA, BOLEH PAKE AI TAPI GABOLEH PAKE INTERNET</h1>
+    {% for komponen in item.list_pertanyaan %}
+        <div>
+            <p>{{komponen.nomor_pertanyaan}}. {{ komponen.pertanyaan }}</p>
+            <input type="radio" id="pilihan_benar" name="pilihan_benar">
+            <label for="pilihan 1"></label>
+        </div>
+    {% endfor %}
+</body>
+</html>

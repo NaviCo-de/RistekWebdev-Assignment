@@ -95,8 +95,8 @@ def add_question(request, id, judul_tryout):
         data_pertanyaan = {
             "nomor_pertanyaan" : nomor,
             "pertanyaan": get_question,
-            "jawaban_salah": get_jawaban_salah,
-            "jawaban_benar": get_jawaban_benar
+            "jawaban_benar": get_jawaban_benar,
+            "jawaban_salah": get_jawaban_salah
         }
 
         tryout["list_pertanyaan"].append(data_pertanyaan)
@@ -133,13 +133,14 @@ def delete_question(request, id, judul_tryout, nomor_pertanyaan):
     for item in data:
         if item["id"] == id:
             tryout = item
-            break
-    data = [pertanyaan for pertanyaan in tryout["list_pertanyaan"] if pertanyaan["nomor_pertanyaan"] != nomor_pertanyaan]
+            
+        tryout["list_pertanyaan"] = [pertanyaan for pertanyaan in tryout["list_pertanyaan"] if pertanyaan["nomor_pertanyaan"] != nomor_pertanyaan]
 
-    for nomor, questions in enumerate(tryout["list_pertanyaan"], start=1):
-        questions['nomor_pertanyaan'] = nomor
+        for nomor, questions in enumerate(tryout["list_pertanyaan"], start=1):
+            questions['nomor_pertanyaan'] = nomor
     
-    write_json(data)
+        write_json(data)
+        break
 
     return redirect('detail_data', judul_tryout=judul_tryout, id = id)
 

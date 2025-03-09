@@ -2,15 +2,8 @@
     {
         "id": 1,
         "judul_tryout": "Tes",
-        "kategori": "PM",
-        "tanggal_dibuat": "08/03/2025",
-        "list_pertanyaan": [
-            {
-                "nomor_pertanyaan": 1,
-                "pertanyaan": "mantap",
-                "jawaban_salah": "Anjay",
-                "jawaban_benar": "GG"
-            }
-        ]
+        "kategori": "123",
+        "tanggal_dibuat": "09/03/2025",
+        "list_pertanyaan": []
     }
 ]
