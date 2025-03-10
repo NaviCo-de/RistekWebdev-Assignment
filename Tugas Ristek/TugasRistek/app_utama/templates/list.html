@@ -5,21 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRYOUT YUK!</title>
-    <link rel="stylesheet" href="../static/app_utama/list.css">
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
 </head>
 <body>
     <nav>
         <ul>
             <li>
-                <img src="../../static/icon/Home.svg" alt="">
+                <img src="../../static/icon/Home.svg" alt="Home">
             </li>
-
             <li>
-                <img src="../../static/icon/About.svg" alt="">
+                <img src="../../static/icon/About.svg" alt="About">
             </li>
-
             <li>
-                <img src="../../static/icon/Critics.svg" alt="">
+                <img src="../../static/icon/Critics.svg" alt="Critics">
             </li>
         </ul>
     </nav>
@@ -30,48 +28,47 @@
             {%csrf_token%}
             <input type="text" name="search" id="search" placeholder="Judul Tryout...">
             <button type="submit">Search</button>
-
             <a href="{% url 'tryout' %}">
-                <button>Clear</button>
+                <button type="button">Clear</button>
             </a>
         </form>
 
-        <a href="{% url 'add_data' %}" id="add">Add</a>
+        <a href="{% url 'add_data' %}" id="add">Add New Tryout</a>
 
         <div id="page-container">
             {% for item in data%}
-                    <div id="main-container">
-                        <div class="tryout-container">
-                            <div id="div-judul-tryout">
-                                <a href="{% url 'detail_data' item.judul_tryout item.id %}">
-                                    <h2 id="h2-judul-tryout">{{ item.judul_tryout }}</h2>
-                                </a>
-                            </div>
-                            
-                            <div id="div-deskripsi-tryout">
-                                <p>Kategori: {{ item.kategori }}</p>
-                                <small>Tanggal dibuat: {{ item.tanggal_dibuat }}</small>
-                                <br>
+                <div class="tryout-container">
+                    <div id="div-judul-tryout">
+                        <a href="{% url 'detail_data' item.judul_tryout item.id %}">
+                            <h2 id="h2-judul-tryout">{{ item.judul_tryout }}</h2>
+                        </a>
+                    </div>
+                    
+                    <div id="div-deskripsi-tryout">
+                        <p>Kategori: {{ item.kategori }}</p>
+                        <small>Tanggal dibuat: {{ item.tanggal_dibuat }}</small>
+                        
+                        <div class="action-buttons">
+                            <a href="{% url 'edit_data' item.id %}">
+                                <div class="div-edit-delete" id="edit">
+                                    <p class="p-edit-delete">Edit</p>
+                                </div>
+                            </a>
 
-                                <a href="{% url 'edit_data' item.id %}">
-                                    <div class="div-edit-delete" id="edit">
-                                        <p class="p-edit-delete">Edit</p>
-                                    </div>
-                                </a>
-
-                                <a href="{% url 'delete_data' item.id %}">
-                                    <div class="div-edit-delete" id="delete">
-                                        <p class="p-edit-delete">Delete</p>
-                                    </div>
-                                </a>
-
-                            </div>
+                            <a href="{% url 'delete_data' item.id %}">
+                                <div class="div-edit-delete" id="delete">
+                                    <p class="p-edit-delete">Delete</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
+                </div>
             {% endfor %}
         </div>
+    </div>
 
-        <footer>
+    <footer>
+        <div class="footer-content">
             <p class="footer-copyright">&copy; 2025 Darrell's Website. All rights reserved.</p>
 
             <div class="footer-icon">
@@ -87,7 +84,7 @@
                     <img src="../../static/icon/Linkedin.svg" alt="logo_linkedin">
                 </a>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 </body>
 </html>

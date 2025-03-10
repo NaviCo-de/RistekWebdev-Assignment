@@ -1,23 +1,72 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRYOUT YUK</title>
+    <title>TRYOUT YUK!</title>
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
 </head>
 <body>
-    <h1>Edit Data</h1>
-    <form method="post">
-        {%csrf_token%}
-        <label for="judul_tryout">Judul Tryout: </label>
-        <input type="text" id="judul_tryout" name="judul_tryout" 
-        value="{{ entry.judul_tryout }}" required><br>
+    <nav>
+        <ul>
+            <li>
+                <img src="../../static/icon/Home.svg" alt="Home">
+            </li>
+            <li>
+                <img src="../../static/icon/About.svg" alt="About">
+            </li>
+            <li>
+                <img src="../../static/icon/Critics.svg" alt="Critics">
+            </li>
+        </ul>
+    </nav>
 
-        <label for="kategori">Kategori: </label>
-        <input type="text" id="kategori" name="kategori" 
-        value="{{ entry.kategori }}" required><br>
+    <div class="container">
+        <h1>Edit Tryout</h1>
+        <form method="post">
+            {%csrf_token%}
+            <div class="form-group">
+                <label for="judul_tryout">Judul Tryout:</label>
+                <input type="text" id="judul_tryout" name="judul_tryout" 
+                value="{{ entry.judul_tryout }}" required>
+            </div>
 
-        <button type="submit">Update</button>
-    </form>
+            <div class="form-group">
+                <label for="kategori">Kategori:</label>
+                <input type="text" id="kategori" name="kategori" 
+                value="{{ entry.kategori }}" required>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Update</button>
+                <a href="{% url 'tryout' %}">
+                    <button type="button" class="cancel-button">Cancel</button>
+                </a>
+            </div>
+        </form>
+        
+        <a href="{% url 'tryout' %}" class="back-link">Balik ke Tryout</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-copyright">&copy; 2025 Darrell's Website. All rights reserved.</p>
+
+            <div class="footer-icon">
+                <a href="https://line.me/ti/p/dar-rell" target="_blank">
+                    <img src="../../static/icon/Line.svg" alt="logo_line">
+                </a>
+
+                <a href="https://www.instagram.com/aridrl_/" target="_blank">
+                    <img src="../../static/icon/Instagram.svg" alt="logo_instagram">
+                </a>
+
+                <a href="https://www.linkedin.com/in/ari-darrell-muljono-313b0b2a1/" target="_blank">
+                    <img src="../../static/icon/Linkedin.svg" alt="logo_linkedin">
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

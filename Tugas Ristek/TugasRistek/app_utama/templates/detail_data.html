@@ -1,22 +1,69 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRYOUT YUK!</title>
+    <link rel="stylesheet" href="{% static 'css/detail_data.css' %}">
+
 </head>
 <body>
-    <h1>{{ item.judul_tryout }}</h1>
-    <a href="{% url 'add_question' item.judul_tryout item.id %}" id="add">Add</a>
-    
-    {% for komponen in item.list_pertanyaan %}
-        <div>
-            <p>{{komponen.nomor_pertanyaan}}. {{ komponen.pertanyaan }}</p>
-            <a href="{% url 'edit_question' item.judul_tryout item.id komponen.nomor_pertanyaan %}">Edit</a>
-            <a href="{% url 'delete_question' item.judul_tryout item.id komponen.nomor_pertanyaan %}">Delete</a>
+    <nav>
+        <ul>
+            <li>
+                <img src="../../static/icon/Home.svg" alt="Home">
+            </li>
+            <li>
+                <img src="../../static/icon/About.svg" alt="About">
+            </li>
+            <li>
+                <img src="../../static/icon/Critics.svg" alt="Critics">
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>{{ item.judul_tryout }}</h1>
+        <a href="{% url 'add_question' item.judul_tryout item.id %}" id="add">Add Question</a>
+        
+        {% if item.list_pertanyaan %}
+            {% for komponen in item.list_pertanyaan %}
+                <div class="question-container">
+                    <p class="question-text">{{komponen.nomor_pertanyaan}}. {{ komponen.pertanyaan }}</p>
+                    <div class="question-actions">
+                        <a href="{% url 'edit_question' item.judul_tryout item.id komponen.nomor_pertanyaan %}" class="action-link edit-link">Edit</a>
+                        <a href="{% url 'delete_question' item.judul_tryout item.id komponen.nomor_pertanyaan %}" class="action-link delete-link">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-questions">
+                <p>Belum ada pertanyaan. Bikin gih biar pada rajin!</p>
+            </div>
+        {% endif %}
+        
+        <a href="{% url 'tryout' %}" class="back-link">Balik ke Tryout</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-copyright">&copy; 2025 Darrell's Website. All rights reserved.</p>
+
+            <div class="footer-icon">
+                <a href="https://line.me/ti/p/dar-rell" target="_blank">
+                    <img src="../../static/icon/Line.svg" alt="logo_line">
+                </a>
+
+                <a href="https://www.instagram.com/aridrl_/" target="_blank">
+                    <img src="../../static/icon/Instagram.svg" alt="logo_instagram">
+                </a>
+
+                <a href="https://www.linkedin.com/in/ari-darrell-muljono-313b0b2a1/" target="_blank">
+                    <img src="../../static/icon/Linkedin.svg" alt="logo_linkedin">
+                </a>
+            </div>
         </div>
-    {% endfor %}
-    <a href="{% url 'pengerjaan_tryout' %}">KERJAKAN</a>
-    <a href="{% url 'tryout' %}">Back</a>
+    </footer>
 </body>
 </html>

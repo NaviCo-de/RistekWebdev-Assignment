@@ -1,27 +1,76 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRYOUT YUK</title>
+    <link rel="stylesheet" href="{% static 'css/edit_question.css' %}">
 </head>
 <body>
-    <h1>Edit Pertanyaan</h1>
-    <form method="post">
-        {%csrf_token%}
-        <label for="pertanyaan">Pertanyaan: </label>
-        <input type="text" id="pertanyaan_baru" name="pertanyaan_baru" 
-        value="{{ entry.pertanyaan }}" required><br>
+    <nav>
+        <ul>
+            <li>
+                <img src="{% static 'icon/Home.svg' %}" alt="Home">
+            </li>
+            <li>
+                <img src="{% static 'icon/About.svg' %}" alt="About">
+            </li>
+            <li>
+                <img src="{% static 'icon/Critics.svg' %}" alt="Critics">
+            </li>
+        </ul>
+    </nav>
 
-        <label for="jawaban_benar_baru">Jawaban Benar: </label>
-        <input type="text" id="jawaban_benar_baru" name="jawaban_benar_baru" 
-        value="{{ entry.jawaban_benar }}" required><br>
+    <div class="container">
+        <h1>Edit Pertanyaan</h1>
+        <form method="post">
+            {%csrf_token%}
+            <div class="form-group">
+                <label for="pertanyaan_baru">Pertanyaan:</label>
+                <input type="text" id="pertanyaan_baru" name="pertanyaan_baru" 
+                value="{{ entry.pertanyaan }}" required>
+            </div>
 
-        <label for="jawaban_benar_baru">Jawaban Salah: </label>
-        <input type="text" id="jawaban_salah_baru" name="jawaban_salah_baru" 
-        value="{{ entry.jawaban_salah }}" required><br>
+            <div class="form-group">
+                <label for="jawaban_benar_baru">Jawaban Benar:</label>
+                <input type="text" id="jawaban_benar_baru" name="jawaban_benar_baru" 
+                value="{{ entry.jawaban_benar }}" required>
+            </div>
 
-        <button type="submit">Update</button>
-    </form>
+            <div class="form-group">
+                <label for="jawaban_salah_baru">Jawaban Salah:</label>
+                <input type="text" id="jawaban_salah_baru" name="jawaban_salah_baru" 
+                value="{{ entry.jawaban_salah }}" required>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit">Update</button>
+                <button type="button" class="cancel-button" onclick="history.back()">Cancel</button>
+            </div>
+        </form>
+        
+        <a href="javascript:history.back()" class="back-link">Balik ke pertanyaan</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-copyright">&copy; 2025 Darrell's Website. All rights reserved.</p>
+
+            <div class="footer-icon">
+                <a href="https://line.me/ti/p/dar-rell" target="_blank">
+                    <img src="{% static 'icon/Line.svg' %}" alt="Line">
+                </a>
+
+                <a href="https://www.instagram.com/aridrl_/" target="_blank">
+                    <img src="{% static 'icon/Instagram.svg' %}" alt="Instagram">
+                </a>
+
+                <a href="https://www.linkedin.com/in/ari-darrell-muljono-313b0b2a1/" target="_blank">
+                    <img src="{% static 'icon/Linkedin.svg' %}" alt="Linkedin">
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

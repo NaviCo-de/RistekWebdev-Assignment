@@ -2,43 +2,15 @@
     {
         "id": 1,
         "judul_tryout": "Tes",
-        "kategori": "123",
-        "tanggal_dibuat": "09/03/2025",
-        "list_pertanyaan": []
-    },
-    {
-        "id": 2,
-        "judul_tryout": "Tes",
-        "kategori": "LBI",
-        "tanggal_dibuat": "10/03/2025",
-        "list_pertanyaan": []
-    },
-    {
-        "id": 3,
-        "judul_tryout": "TO",
-        "kategori": "PK",
-        "tanggal_dibuat": "10/03/2025",
-        "list_pertanyaan": []
-    },
-    {
-        "id": 4,
-        "judul_tryout": "TO",
-        "kategori": "123",
-        "tanggal_dibuat": "10/03/2025",
-        "list_pertanyaan": []
-    },
-    {
-        "id": 5,
-        "judul_tryout": "Interview HRD",
-        "kategori": "-",
-        "tanggal_dibuat": "10/03/2025",
-        "list_pertanyaan": []
-    },
-    {
-        "id": 6,
-        "judul_tryout": "Tes",
         "kategori": "PM",
         "tanggal_dibuat": "10/03/2025",
-        "list_pertanyaan": []
+        "list_pertanyaan": [
+            {
+                "nomor_pertanyaan": 1,
+                "pertanyaan": "mantap",
+                "jawaban_benar": "GG",
+                "jawaban_salah": "Anjay"
+            }
+        ]
     }
 ]
