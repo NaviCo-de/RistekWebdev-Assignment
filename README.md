@@ -18,7 +18,7 @@
 - Download Django:
     - Buka terminal
     - Masuk ke directory folder virtual environment (Cara sudah ada di atas)
-    - Ketik python -m pip install Django==<versi Django terbaru>
+    - Ketik python -m pip install Django== <versi Django terbaru>
     - Buat ngecek ketik pip list
 - Run Django file:
     - Buka terminal
