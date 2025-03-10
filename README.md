@@ -1,26 +1,26 @@
 # RistekWebdev-Assignment
-- Download python:
+- ## Download python:
     - Kunjungi situs resmi Python: https://www.python.org/downloads/
     - Unduh versi terbaru Python yang sesuai dengan sistem operasi.
     - Saat instalasi, centang opsi "Add Python to PATH" agar Python dapat diakses dari terminal.
-    - Untuk mengecek apakah python sudah terinstall, dapat melakukan python --version pada terminal.
-- Bikin virtual environment:
+    - Untuk mengecek apakah python sudah terinstall, dapat melakukan `python --version.`
+- ## Bikin virtual environment:
     - Masuk ke folder kosong (Supaya lebih terstruktur, enggak kecampur sama file lain)
     - Buka terminal
-    - ketik python -m venv <nama folder virtual environment>
+    - ketik `python -m venv <nama folder virtual environment>`
     - Udah selesai setup virtual environment
-- Jalanin virtual environement:
+- ## Jalanin virtual environement:
     - Buka terminal
     - Masuk ke directory dimana folder virtual environment didownload:
-        - Di terminal ketik cd <directory filenya>
-        - Semisal folder ada di dalam folder ketik cd <induk directory>\<directory lain>\.... sampe masuk ke directory venv
-    - ketik <nama folder virtual environment>\Scripts\activate
-- Download Django:
+        - Di terminal ketik `cd <directory filenya>`
+        - Semisal folder ada di dalam folder ketik `cd <induk directory>\<directory lain>\.... sampe masuk ke directory venv`
+    - ketik `<nama folder virtual environment>\Scripts\activate`
+- ## Download Django:
     - Buka terminal
     - Masuk ke directory folder virtual environment (Cara sudah ada di atas)
-    - Ketik python -m pip install Django== <versi Django terbaru>
+    - Ketik `python -m pip install Django== <versi Django terbaru>`
     - Buat ngecek ketik pip list
-- Run Django file:
+- ## Run Django file:
     - Buka terminal
     - Masuk ke folder projek
     - ketik python manage.py runserver
