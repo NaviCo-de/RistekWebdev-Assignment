@@ -22,7 +22,7 @@
     - Buat ngecek ketik pip list
 - ## Run Django file:
     - Buka terminal
-    - Masuk ke folder projek
+    - Masuk ke folder TugasRistek
     - ketik python manage.py runserver
     - Nanti akan ada link localhost
     - Klik linknya
