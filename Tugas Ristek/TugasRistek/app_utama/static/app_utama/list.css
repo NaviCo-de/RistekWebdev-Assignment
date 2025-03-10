@@ -12,6 +12,10 @@ body {
     padding: 0 20px 20px 20px;
 }
 
+nav ul li {
+    list-style: none;
+}
+
 footer {
     background-color: #333;
     color: white;
@@ -45,9 +49,22 @@ footer {
 }
 
 .tryout-container {
+    background: linear-gradient(to right, #EBE8DB 50%, white 50%);
+    background-position: right;
+    background-size: 200% 100%;
+    border: .5px solid black;
     border-radius: 10px 10px;
-    background-color: lightgray;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 5px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+    transition: background-position 0.5s ease;
     width: 300px;
+}
+
+.tryout-container:hover {
+    background-position: left;
+    transform: scale(1.05);
 }
 
 .p-edit-delete {
@@ -55,6 +72,10 @@ footer {
 }
 
 .wrapper {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -83,14 +104,13 @@ footer {
 }
 
 #main-container {
-    display: inline-flex;
-    height: auto;
-    margin: 20px 20px 0 0;
+    margin: 10px 10px 10px 0;
 }
 
 #page-container {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     max-width: 100%;
+    margin: 0 auto;
 }

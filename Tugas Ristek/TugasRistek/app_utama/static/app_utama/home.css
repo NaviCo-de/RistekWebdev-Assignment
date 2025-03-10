@@ -6,6 +6,9 @@ body, html {
 
 a {
     color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-decoration: none;
 }
 
@@ -18,12 +21,26 @@ a {
     text-align: center;
 }
 
+.landing-page h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 .button-awal {
-    background-color: #007BFF; 
+    background-color: #007BFF;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 10px 20px rgba(0, 0, 0, 0.25);
     color: white;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
     font-size: 18px;
     margin-top: 20px;
+    transition: transform 0.1s ease;
+}
+
+.button-awal:hover {
+    transform: scale(1.1);
 }
